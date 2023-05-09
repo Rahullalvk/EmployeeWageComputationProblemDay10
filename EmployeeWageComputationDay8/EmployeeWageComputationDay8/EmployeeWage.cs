@@ -11,18 +11,29 @@ namespace EmployeeWageComputationDay8
         public void EmployeeAttendence()
         {
 
-            int IS_FULL_TIME = 1;
-            Random rdm = new Random();
-            int empCheck = rdm.Next(2);
-            if (empCheck == IS_FULL_TIME)
-            {
-                Console.WriteLine("Employee Is present");
-            }
-            else
-            {
-                Console.WriteLine("Employee Is absent");
+                int EMP_RATE_PER_HOUR = 20;
+
+                int IS_FULL_TIME = 1;
+
+                int empHours = 0;
+                int empWages = 0;
+                Random rdm = new Random();
+                int empCheck = rdm.Next(2);
+                if (empCheck == IS_FULL_TIME)
+                {
+                    empHours = 8;
+                }
+                else
+                {
+                    empHours = 0;
+                }
+                empWages = empHours * EMP_RATE_PER_HOUR;
+                Console.WriteLine("Total wage of the employee :" + empWages);
+
+
+
             }
 
         }
     }
-}
+
