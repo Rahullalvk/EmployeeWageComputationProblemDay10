@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputationDay8
 {
-    public class EmpWageBuilderArray
+    public interface IComputeEmpWage
     {
+        void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+        void ComputeEmpWage();
+    }
 
+    public class EmpWageBuilderArray : IComputeEmpWage
+    {
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
 
@@ -60,6 +65,6 @@ namespace EmployeeWageComputationDay8
             }
             return totalEmpHrs * companyEmpWage.empRatePerHour;
         }
-
     }
+
 }
