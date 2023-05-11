@@ -7,10 +7,10 @@ namespace EmployeeWageComputationDy8
         static void Main(string[] args) 
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
-            EmpWageBuilderArray empWageBuilderArray = new EmpWageBuilderArray();
-            empWageBuilderArray.addCompanyEmpWage("DMart", 20, 2, 10);
-            empWageBuilderArray.addCompanyEmpWage("Reliance", 10, 4, 20);
-            empWageBuilderArray.computeEmpWage();
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.AddCompanyEmpWage("DMart", 20, 2, 10);
+            empWageBuilder.AddCompanyEmpWage("Reliance", 10, 4, 20);
+            empWageBuilder.ComputeEmpWage();
         }
     }
 }
