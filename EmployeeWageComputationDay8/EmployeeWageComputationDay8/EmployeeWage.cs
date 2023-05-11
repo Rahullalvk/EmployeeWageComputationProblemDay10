@@ -11,6 +11,7 @@ namespace EmployeeWageComputationDay8
     {
         void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
         void ComputeEmpWage();
+        int GetTotalWageByCompany(string company);
     }
 
     public class EmpWageBuilderArray : IComputeEmpWage
@@ -39,7 +40,19 @@ namespace EmployeeWageComputationDay8
             }
         }
 
-        private int ComputeEmpWage(CompanyEmpWage companyEmpWage)
+        public int GetTotalWageByCompany(string company)
+        {
+            foreach (CompanyEmpWage companyEmpWage in companyEmpWageList)
+            {
+                if (companyEmpWage.company.Equals(company))
+                {
+                    return companyEmpWage.totalEmpwage;
+                }
+            }
+            return 0; 
+        }
+        public int ComputeEmpWage(CompanyEmpWage companyEmpWage)
+
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 
@@ -62,9 +75,10 @@ namespace EmployeeWageComputationDay8
                 }
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day#:" + totalWorkingDays + " Emp Hrs: " + empHrs);
+
             }
-            return totalEmpHrs * companyEmpWage.empRatePerHour;
         }
     }
-
 }
+
+   
